@@ -6,6 +6,18 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Zend\\Validator\\' => array($vendorDir . '/zendframework/zend-validator/src'),
+    'Zend\\Stdlib\\' => array($vendorDir . '/zendframework/zend-stdlib/src'),
+    'Zend\\ServiceManager\\' => array($vendorDir . '/zendframework/zend-servicemanager/src'),
+    'Zend\\Paginator\\' => array($vendorDir . '/zendframework/zend-paginator/src'),
+    'Zend\\Mvc\\' => array($vendorDir . '/zendframework/zend-mvc/src'),
+    'Zend\\InputFilter\\' => array($vendorDir . '/zendframework/zend-inputfilter/src'),
+    'Zend\\Hydrator\\' => array($vendorDir . '/zendframework/zend-hydrator/src'),
+    'Zend\\Form\\' => array($vendorDir . '/zendframework/zend-form/src'),
+    'Zend\\Filter\\' => array($vendorDir . '/zendframework/zend-filter/src'),
+    'Zend\\EventManager\\' => array($vendorDir . '/zendframework/zend-eventmanager/src'),
+    'Zend\\Cache\\' => array($vendorDir . '/zendframework/zend-cache/src'),
+    'Zend\\Authentication\\' => array($vendorDir . '/zendframework/zend-authentication/src'),
     'Tests\\' => array($baseDir . '/tests'),
     'Symfony\\Polyfill\\Util\\' => array($vendorDir . '/symfony/polyfill-util'),
     'Symfony\\Polyfill\\Php70\\' => array($vendorDir . '/symfony/polyfill-php70'),
@@ -25,6 +37,7 @@ return array(
     'Sensio\\Bundle\\FrameworkExtraBundle\\' => array($vendorDir . '/sensio/framework-extra-bundle'),
     'Sensio\\Bundle\\DistributionBundle\\' => array($vendorDir . '/sensio/distribution-bundle'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
+    'Interop\\Container\\' => array($vendorDir . '/container-interop/container-interop/src/Interop/Container'),
     'Incenteev\\ParameterHandler\\' => array($vendorDir . '/incenteev/composer-parameter-handler'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'Doctrine\\Common\\Cache\\' => array($vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache'),

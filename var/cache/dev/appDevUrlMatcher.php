@@ -114,6 +114,26 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::contactAction',  '_route' => 'contact',);
         }
 
+        // bio
+        if ($pathinfo === '/bio') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::bioAction',  '_route' => 'bio',);
+        }
+
+        // projects
+        if ($pathinfo === '/projects') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::projectsAction',  '_route' => 'projects',);
+        }
+
+        // admin
+        if ($pathinfo === '/admin') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::adminAction',  '_route' => 'admin',);
+        }
+
+        // app_default_project
+        if (0 === strpos($pathinfo, '/projects') && preg_match('#^/projects(?:/(?P<id>[^/]++))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_default_project')), array (  'id' => 1,  '_controller' => 'AppBundle\\Controller\\DefaultController::projectAction',));
+        }
+
         // hello
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'hello')), array (  '_controller' => 'AppBundle\\Controller\\ParamController::helloAction',));

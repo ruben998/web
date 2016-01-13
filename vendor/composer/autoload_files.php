@@ -6,12 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    $vendorDir . '/symfony/phpunit-bridge/bootstrap.php',
-    $vendorDir . '/swiftmailer/swiftmailer/lib/swift_required.php',
-    $vendorDir . '/paragonie/random_compat/lib/random.php',
-    $vendorDir . '/symfony/polyfill-php70/bootstrap.php',
-    $vendorDir . '/symfony/polyfill-php56/bootstrap.php',
-    $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
-    $vendorDir . '/symfony/polyfill-intl-icu/bootstrap.php',
-    $baseDir . '/app/AppKernel.php',
+    '42b4eaba0390212ea1477168ceeb0eb7' => $vendorDir . '/symfony/phpunit-bridge/bootstrap.php',
+    '01b872096dad055849387e42d41a176d' => $vendorDir . '/swiftmailer/swiftmailer/lib/swift_required.php',
+    '64777cd7d356cde6e827c1fa49f98dbd' => $vendorDir . '/paragonie/random_compat/lib/random.php',
+    'df5fa0cc77a97953513f3411f17f1179' => $vendorDir . '/symfony/polyfill-php70/bootstrap.php',
+    'e87a3015738447d44bc0516cb3cdcd72' => $vendorDir . '/symfony/polyfill-php56/bootstrap.php',
+    'f5b3ada715b2e75e9a702d70d0eeca62' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
+    'c66d02e2ecb1205f357cbc98003bf55f' => $vendorDir . '/symfony/polyfill-intl-icu/bootstrap.php',
+    '41fe1562c076fd5b7c230ae3ed432a27' => $baseDir . '/app/AppKernel.php',
 );

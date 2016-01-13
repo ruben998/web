@@ -13,7 +13,6 @@
 
     </head>
     <body background="bundles/framework/images/background.png">
-
     <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -27,13 +26,14 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                <li class="menu"><a href="/">Biografia</a></li>
+                <li class="menu"><a href="bio">Biografia</a></li>
                 <li class="dropdown menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="projects" class="dropdown-toggle" data-toggle="dropdown">
                         Proyectos
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
+                        <li><a href="/projects/1">Plug in, voluntariat</a></li>
                         <li><a href="#">Assetjats 1714</a></li>
                         <li><a href="#">Bootcamp Incubio</a></li>
                         <li><a href="#">Web personal</a></li>
@@ -43,12 +43,14 @@
             </ul>
         </div>
     </nav>
-        {% block body %}
+    <div class="container div-main">
+    {% block body %}
 
-        {% endblock %}
-        {% block javascripts %}
-            <script type="text/javascript" src="{{ asset('bundles/framework/js/bootstrap.min.js') }}"></script>
-            <script type="text/javascript" src="{{ asset('bundles/framework/js/ownjs.js') }}"></script>
-        {% endblock %}
+    {% endblock %}
+    </div>
+    {% block javascripts %}
+        <script type="text/javascript" src="{{ asset('bundles/framework/js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/framework/js/ownjs.js') }}"></script>
+    {% endblock %}
     </body>
 </html>

@@ -9,6 +9,17 @@
 .div-jumbotron{
     background-size: 100%;
     margin-top: 1em;
+    background-image: url('../images/jumbotron.png');
+    color: white;
+}
+
+.div-btn {
+    width: 0;
+    height: 0;
+    border-right: 100px solid transparent;
+    border-top: 100px solid transparent;
+    border-left: 100px solid transparent;
+    border-bottom: 100px solid #f0ad4e;
 }
 .menu{
 
