@@ -109,12 +109,11 @@
   'WebProfilerBundle:Profiler:base_js.html.twig' => '/home/ruben/web/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/base_js.html.twig',
   'WebProfilerBundle:Profiler:results.html.twig' => '/home/ruben/web/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/results.html.twig',
   'WebProfilerBundle:Router:panel.html.twig' => '/home/ruben/web/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Router/panel.html.twig',
-  ':default:another.html.twig' => '/home/ruben/web/app/Resources/views/default/another.html.twig',
+  ':default:project.html.twig' => '/home/ruben/web/app/Resources/views/default/project.html.twig',
   ':default:index.html.twig' => '/home/ruben/web/app/Resources/views/default/index.html.twig',
   ':default:contact.html.twig' => '/home/ruben/web/app/Resources/views/default/contact.html.twig',
   ':default:projects.html.twig' => '/home/ruben/web/app/Resources/views/default/projects.html.twig',
   ':default:bio.html.twig' => '/home/ruben/web/app/Resources/views/default/bio.html.twig',
-  ':hello:name.html.twig' => '/home/ruben/web/app/Resources/views/hello/name.html.twig',
   ':auth:admin.html.twig' => '/home/ruben/web/app/Resources/views/auth/admin.html.twig',
   '::base.html.twig' => '/home/ruben/web/app/Resources/views/base.html.twig',
 );

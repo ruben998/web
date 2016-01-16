@@ -125,7 +125,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // admin
-        if ($pathinfo === '/admin') {
+        if ($pathinfo === '/auth/admin') {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::adminAction',  '_route' => 'admin',);
         }
 
@@ -137,6 +137,81 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // hello
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'hello')), array (  '_controller' => 'AppBundle\\Controller\\ParamController::helloAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/projects')) {
+            // projects_index
+            if (preg_match('#^/projects/(?P<id>[^/]++)//?$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_projects_index;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'projects_index');
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'projects_index')), array (  '_controller' => 'AppBundle\\Controller\\ProjectController::indexAction',));
+            }
+            not_projects_index:
+
+            // projects_new
+            if (preg_match('#^/projects/(?P<id>[^/]++)//new$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_projects_new;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'projects_new')), array (  '_controller' => 'AppBundle\\Controller\\ProjectController::newAction',));
+            }
+            not_projects_new:
+
+            // projects_show
+            if (preg_match('#^/projects/(?P<id>[^/]++)//show$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_projects_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'projects_show')), array (  '_controller' => 'AppBundle\\Controller\\ProjectController::showAction',));
+            }
+            not_projects_show:
+
+            // projects_edit
+            if (preg_match('#^/projects/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_projects_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'projects_edit')), array (  '_controller' => 'AppBundle\\Controller\\ProjectController::editAction',));
+            }
+            not_projects_edit:
+
+            // projects_delete
+            if (preg_match('#^/projects/(?P<id>[^/]++)//delete$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_projects_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'projects_delete')), array (  '_controller' => 'AppBundle\\Controller\\ProjectController::deleteAction',));
+            }
+            not_projects_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/login')) {
+            // login
+            if ($pathinfo === '/login') {
+                return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
+            }
+
+            // login_check
+            if ($pathinfo === '/login_check') {
+                return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::loginCheckAction',  '_route' => 'login_check',);
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

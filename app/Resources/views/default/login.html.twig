@@ -1,4 +1,6 @@
+{% extends 'base.html.twig' %}
 
+{% block body %}
     {% if error %}
         <div>{{ error.message }}</div>
     {% endif %}
@@ -9,7 +11,11 @@
 
         <label for="password">Password:</label>
         <input type="password" id="password" name="_password" />
+        <input type="hidden" name="_csrf_token"
+               value="{{ csrf_token('authenticate') }}"
+        >
 
+        <input type="hidden" name="_target_path" value="/auth/admin" />
         {#
             añade lo siguiente si quieres redirigir al usuario a una
             URL concreta después del login (explicado más adelante)
@@ -18,3 +24,4 @@
 
         <button type="submit">login</button>
     </form>
+{% endblock %}

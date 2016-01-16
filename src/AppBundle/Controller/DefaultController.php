@@ -1,7 +1,8 @@
 <?php
 
 namespace AppBundle\Controller;
-use AppBundle\database\Project;
+
+use AppBundle\Project;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\BrowserKit\Response;
@@ -46,6 +47,7 @@ class DefaultController extends Controller
         $project->setName('Associació Casal La formiga');
         $project->setDescription('Associació Casal La formiga');
         $project->setImage('n');
+        $project->setLanguage('cat');
 
         $em = $this->getDoctrine()->getManager();
 
@@ -56,7 +58,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/admin", name="admin")
+     * @Route("/auth/admin", name="admin")
      */
     public function adminAction(Request $request)
     {
