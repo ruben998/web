@@ -8,18 +8,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\Project;
 use AppBundle\Form\ProjectType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
-/**
- * Project controller.
- *
- * @Route("/projects/{id}/")
- */
 class ProjectController extends Controller
 {
     /**
      * Lists all Project entities.
      *
-     * @Route("/", name="projects_index")
+     * @Route("/projects", name="projects_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -36,13 +32,13 @@ class ProjectController extends Controller
     /**
      * Creates a new Project entity.
      *
-     * @Route("/new", name="projects_new")
+     * @Route("projects/new", name="projects_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
     {
         $project = new Project();
-        $form = $this->createForm(new ProjectType(), $project);
+        $form = $this->createForm(ProjectType::class, $project);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -62,8 +58,11 @@ class ProjectController extends Controller
     /**
      * Finds and displays a Project entity.
      *
-     * @Route("/show", name="projects_show")
+     * @Route("projects/show/{id}", name="projects_show")
      * @Method("GET")
+     * @param Project $project
+     * @ParamConverter("project", class="AppBundle:Project")
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showAction(Project $project)
     {
@@ -78,13 +77,17 @@ class ProjectController extends Controller
     /**
      * Displays a form to edit an existing Project entity.
      *
-     * @Route("edit", name="projects_edit")
+     * @Route("projects/edit/{id}", name="projects_edit")
      * @Method({"GET", "POST"})
+     * @param Request $request
+     * @param Project $project
+     * @ParamConverter("project", class="AppBundle:Project")
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function editAction(Request $request, Project $project)
     {
         $deleteForm = $this->createDeleteForm($project);
-        $editForm = $this->createForm(new ProjectType(), $project);
+        $editForm = $this->createForm(ProjectType::class, $project);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
@@ -105,8 +108,12 @@ class ProjectController extends Controller
     /**
      * Deletes a Project entity.
      *
-     * @Route("/delete", name="projects_delete")
+     * @Route("projects/delete/{id}", name="projects_delete")
      * @Method("DELETE")
+     * @param Request $request
+     * @param Project $project
+     * @ParamConverter("project", class="AppBundle:Project")
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function deleteAction(Request $request, Project $project)
     {

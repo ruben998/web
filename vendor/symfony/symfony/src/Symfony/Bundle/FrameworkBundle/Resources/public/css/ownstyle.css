@@ -20,7 +20,19 @@
     border-top: 100px solid transparent;
     border-left: 100px solid transparent;
     border-bottom: 100px solid #f0ad4e;
+    color: white;
+    font-size: 250%;
 }
-.menu{
+.homepage{
+    color: white;
+}
 
+.div-btn:hover {
+    color: black;
+    border-bottom: 100px solid white;
+}
+
+a:link
+{
+    text-decoration:none;
 }

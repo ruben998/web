@@ -114,24 +114,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::contactAction',  '_route' => 'contact',);
         }
 
-        // bio
-        if ($pathinfo === '/bio') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::bioAction',  '_route' => 'bio',);
-        }
-
-        // projects
-        if ($pathinfo === '/projects') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::projectsAction',  '_route' => 'projects',);
+        // biografia
+        if ($pathinfo === '/biografia') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::bioAction',  '_route' => 'biografia',);
         }
 
         // admin
         if ($pathinfo === '/auth/admin') {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::adminAction',  '_route' => 'admin',);
-        }
-
-        // app_default_project
-        if (0 === strpos($pathinfo, '/projects') && preg_match('#^/projects(?:/(?P<id>[^/]++))?$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_default_project')), array (  'id' => 1,  '_controller' => 'AppBundle\\Controller\\DefaultController::projectAction',));
         }
 
         // hello
@@ -141,33 +131,29 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         if (0 === strpos($pathinfo, '/projects')) {
             // projects_index
-            if (preg_match('#^/projects/(?P<id>[^/]++)//?$#s', $pathinfo, $matches)) {
+            if ($pathinfo === '/projects') {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_projects_index;
                 }
 
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'projects_index');
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'projects_index')), array (  '_controller' => 'AppBundle\\Controller\\ProjectController::indexAction',));
+                return array (  '_controller' => 'AppBundle\\Controller\\ProjectController::indexAction',  '_route' => 'projects_index',);
             }
             not_projects_index:
 
             // projects_new
-            if (preg_match('#^/projects/(?P<id>[^/]++)//new$#s', $pathinfo, $matches)) {
+            if ($pathinfo === '/projects/new') {
                 if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
                     goto not_projects_new;
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'projects_new')), array (  '_controller' => 'AppBundle\\Controller\\ProjectController::newAction',));
+                return array (  '_controller' => 'AppBundle\\Controller\\ProjectController::newAction',  '_route' => 'projects_new',);
             }
             not_projects_new:
 
             // projects_show
-            if (preg_match('#^/projects/(?P<id>[^/]++)//show$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/projects/show') && preg_match('#^/projects/show/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_projects_show;
@@ -178,7 +164,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_projects_show:
 
             // projects_edit
-            if (preg_match('#^/projects/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/projects/edit') && preg_match('#^/projects/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
                     goto not_projects_edit;
@@ -189,7 +175,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_projects_edit:
 
             // projects_delete
-            if (preg_match('#^/projects/(?P<id>[^/]++)//delete$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/projects/delete') && preg_match('#^/projects/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if ($this->context->getMethod() != 'DELETE') {
                     $allow[] = 'DELETE';
                     goto not_projects_delete;

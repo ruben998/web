@@ -6,13 +6,13 @@
         <p>Página personal</p>
     </div>
     <div align="center" class="col-md-4">
-        <a href="/bio"><p class="div-btn">Biografia</p></a>
+        <a href="{{ path('biografia') }}"><p class="div-btn">Biografia</p></a>
     </div>
     <div align="center" class="col-md-4">
-        <a href="/projects"><p class="div-btn">Proyectos</p></a>
+        <a href="{{ path('projects_index') }}"><p class="div-btn">Proyectos</p></a>
     </div>
     <div align="center" class="col-md-4">
-        <a href="/contact"><p class="div-btn">Contacto</p></a>
+        <a href="{{ path('contact') }}"><p class="div-btn">Contacto</p></a>
     </div>
 {% endblock %}
 

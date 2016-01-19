@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Project;
+use AppBundle\Entity\Project;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\BrowserKit\Response;
@@ -29,32 +29,12 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/bio", name="bio")
+     * @Route("/biografia", name="biografia")
      */
     public function bioAction(Request $request)
     {
         // replace this example code with whatever you need
         return $this->render('default/bio.html.twig');
-    }
-
-    /**
-     * @Route("/projects", name="projects")
-     */
-    public function projectsAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        $project = new \AppBundle\Entity\Project();
-        $project->setName('Associació Casal La formiga');
-        $project->setDescription('Associació Casal La formiga');
-        $project->setImage('n');
-        $project->setLanguage('cat');
-
-        $em = $this->getDoctrine()->getManager();
-
-        $em->persist($project);
-        $em->flush();
-
-        return $this->render('default/projects.html.twig', array('project'=>$project));
     }
 
     /**
@@ -64,22 +44,6 @@ class DefaultController extends Controller
     {
         // replace this example code with whatever you need
         return $this->render('auth/admin.html.twig');
-    }
-
-
-    /**
-     * @Route("/projects/{id}", defaults={"id" = 1})
-     */
-    public function projectAction($id)
-    {
-        $project = $this->getDoctrine()
-            ->getRepository('AppBundle:Project')
-            ->find($id);
-        if(!$project){
-            throw $this->createNotFoundException('No project found for id '.$id);
-        }
-
-        return $this->render('default/projects.html.twig', array('project'=>$project, 'hola'=>'hola'));
     }
 
 }

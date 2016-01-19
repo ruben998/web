@@ -1,6 +1,6 @@
 <?php
 
-/* default/contact.html.twig */
+/* :default:contact.html.twig */
 class __TwigTemplate_36dcb6647da473e1d8c20d11888c59628b9286e15e2e310f8dd42f670447b6ad extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_36dcb6647da473e1d8c20d11888c59628b9286e15e2e310f8dd42f67044
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "default/contact.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":default:contact.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -21,38 +21,35 @@ class __TwigTemplate_36dcb6647da473e1d8c20d11888c59628b9286e15e2e310f8dd42f67044
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_88298f300ca69eec63ed1ee58775d53e05d053bd2aef96ee1d54e07ce7f44c65 = $this->env->getExtension("native_profiler");
-        $__internal_88298f300ca69eec63ed1ee58775d53e05d053bd2aef96ee1d54e07ce7f44c65->enter($__internal_88298f300ca69eec63ed1ee58775d53e05d053bd2aef96ee1d54e07ce7f44c65_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/contact.html.twig"));
+        $__internal_974d4676784a6589bd4811409d0c6b0d51bd462a3f81637a841ebe87f7cd7559 = $this->env->getExtension("native_profiler");
+        $__internal_974d4676784a6589bd4811409d0c6b0d51bd462a3f81637a841ebe87f7cd7559->enter($__internal_974d4676784a6589bd4811409d0c6b0d51bd462a3f81637a841ebe87f7cd7559_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":default:contact.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_88298f300ca69eec63ed1ee58775d53e05d053bd2aef96ee1d54e07ce7f44c65->leave($__internal_88298f300ca69eec63ed1ee58775d53e05d053bd2aef96ee1d54e07ce7f44c65_prof);
+        $__internal_974d4676784a6589bd4811409d0c6b0d51bd462a3f81637a841ebe87f7cd7559->leave($__internal_974d4676784a6589bd4811409d0c6b0d51bd462a3f81637a841ebe87f7cd7559_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_7e52f96a949dda71edf05f3443ff17fb67f7df387d0c2dc4526bd26d48b32f4e = $this->env->getExtension("native_profiler");
-        $__internal_7e52f96a949dda71edf05f3443ff17fb67f7df387d0c2dc4526bd26d48b32f4e->enter($__internal_7e52f96a949dda71edf05f3443ff17fb67f7df387d0c2dc4526bd26d48b32f4e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_a0a8ca057f90e29259e54fde8aba057f3b6448894676811fe358303da2e14786 = $this->env->getExtension("native_profiler");
+        $__internal_a0a8ca057f90e29259e54fde8aba057f3b6448894676811fe358303da2e14786->enter($__internal_a0a8ca057f90e29259e54fde8aba057f3b6448894676811fe358303da2e14786_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <div class=\".jumbotron div-jumbotron\" align=\"center\">
-        <h1>";
-        // line 5
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["project"]) ? $context["project"] : $this->getContext($context, "project")), "name", array()), "html", null, true);
-        echo "</h1>
+        <h1>CONTACTO</h1>
         <p>Página personal</p>
     </div>
 ";
         
-        $__internal_7e52f96a949dda71edf05f3443ff17fb67f7df387d0c2dc4526bd26d48b32f4e->leave($__internal_7e52f96a949dda71edf05f3443ff17fb67f7df387d0c2dc4526bd26d48b32f4e_prof);
+        $__internal_a0a8ca057f90e29259e54fde8aba057f3b6448894676811fe358303da2e14786->leave($__internal_a0a8ca057f90e29259e54fde8aba057f3b6448894676811fe358303da2e14786_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "default/contact.html.twig";
+        return ":default:contact.html.twig";
     }
 
     public function isTraitable()
@@ -62,14 +59,14 @@ class __TwigTemplate_36dcb6647da473e1d8c20d11888c59628b9286e15e2e310f8dd42f67044
 
     public function getDebugInfo()
     {
-        return array (  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
 /* */
 /* {% block body %}*/
 /*     <div class=".jumbotron div-jumbotron" align="center">*/
-/*         <h1>{{ project.name }}</h1>*/
+/*         <h1>CONTACTO</h1>*/
 /*         <p>Página personal</p>*/
 /*     </div>*/
 /* {% endblock %}*/

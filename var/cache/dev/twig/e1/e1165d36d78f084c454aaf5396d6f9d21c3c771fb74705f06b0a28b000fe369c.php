@@ -1,6 +1,6 @@
 <?php
 
-/* @Twig/Exception/traces_text.html.twig */
+/* TwigBundle:Exception:traces_text.html.twig */
 class __TwigTemplate_8102d5eaf21e4d1c4af69e108af909df22d4f7bb33fcf9890be1d49fdb43f017 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_8102d5eaf21e4d1c4af69e108af909df22d4f7bb33fcf9890be1d49fdb4
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_886eddd773b1a485a2cb4fe72163a955732957e7cf13a6bba0fea48cdb6e6473 = $this->env->getExtension("native_profiler");
-        $__internal_886eddd773b1a485a2cb4fe72163a955732957e7cf13a6bba0fea48cdb6e6473->enter($__internal_886eddd773b1a485a2cb4fe72163a955732957e7cf13a6bba0fea48cdb6e6473_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/Exception/traces_text.html.twig"));
+        $__internal_5023d2805a746cba33d5b2062bd98e2317b16bf5e8eabc2f1c3aed1002f88dc8 = $this->env->getExtension("native_profiler");
+        $__internal_5023d2805a746cba33d5b2062bd98e2317b16bf5e8eabc2f1c3aed1002f88dc8->enter($__internal_5023d2805a746cba33d5b2062bd98e2317b16bf5e8eabc2f1c3aed1002f88dc8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TwigBundle:Exception:traces_text.html.twig"));
 
         // line 1
         echo "<div class=\"block\">
@@ -51,7 +51,7 @@ class __TwigTemplate_8102d5eaf21e4d1c4af69e108af909df22d4f7bb33fcf9890be1d49fdb4
             echo "
 ";
             // line 15
-            $this->loadTemplate("@Twig/Exception/traces.txt.twig", "@Twig/Exception/traces_text.html.twig", 15)->display(array("exception" => $context["e"]));
+            $this->loadTemplate("@Twig/Exception/traces.txt.twig", "TwigBundle:Exception:traces_text.html.twig", 15)->display(array("exception" => $context["e"]));
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['i'], $context['e'], $context['_parent'], $context['loop']);
@@ -62,13 +62,13 @@ class __TwigTemplate_8102d5eaf21e4d1c4af69e108af909df22d4f7bb33fcf9890be1d49fdb4
 </div>
 ";
         
-        $__internal_886eddd773b1a485a2cb4fe72163a955732957e7cf13a6bba0fea48cdb6e6473->leave($__internal_886eddd773b1a485a2cb4fe72163a955732957e7cf13a6bba0fea48cdb6e6473_prof);
+        $__internal_5023d2805a746cba33d5b2062bd98e2317b16bf5e8eabc2f1c3aed1002f88dc8->leave($__internal_5023d2805a746cba33d5b2062bd98e2317b16bf5e8eabc2f1c3aed1002f88dc8_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "@Twig/Exception/traces_text.html.twig";
+        return "TwigBundle:Exception:traces_text.html.twig";
     }
 
     public function isTraitable()
