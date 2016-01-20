@@ -32,7 +32,7 @@ class ProjectController extends Controller
     /**
      * Creates a new Project entity.
      *
-     * @Route("projects/new", name="projects_new")
+     * @Route("auth/projects/new", name="projects_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -75,9 +75,28 @@ class ProjectController extends Controller
     }
 
     /**
+     * Finds and displays a Project entity.
+     *
+     * @Route("auth/projects/show/{id}", name="projects_show")
+     * @Method("GET")
+     * @param Project $project
+     * @ParamConverter("project", class="AppBundle:Project")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function showAuthAction(Project $project)
+    {
+        $deleteForm = $this->createDeleteForm($project);
+
+        return $this->render('project/auth_show.html.twig', array(
+            'project' => $project,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
      * Displays a form to edit an existing Project entity.
      *
-     * @Route("projects/edit/{id}", name="projects_edit")
+     * @Route("auth/projects/edit/{id}", name="projects_edit")
      * @Method({"GET", "POST"})
      * @param Request $request
      * @param Project $project
@@ -108,7 +127,7 @@ class ProjectController extends Controller
     /**
      * Deletes a Project entity.
      *
-     * @Route("projects/delete/{id}", name="projects_delete")
+     * @Route("auth/projects/delete/{id}", name="projects_delete")
      * @Method("DELETE")
      * @param Request $request
      * @param Project $project

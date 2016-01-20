@@ -27,9 +27,6 @@
                         <li>
                             <a href="{{ path('projects_show', { 'id': project.id }) }}">show</a>
                         </li>
-                        <li>
-                            <a href="{{ path('projects_edit', { 'id': project.id }) }}">edit</a>
-                        </li>
                     </ul>
                 </td>
             </tr>
@@ -37,9 +34,4 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('projects_new') }}">Create a new entry</a>
-        </li>
-    </ul>
 {% endblock %}
