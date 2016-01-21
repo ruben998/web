@@ -21,92 +21,47 @@ class __TwigTemplate_db8024914fbfb92b316c4b8881cbd471cb87af2e43130f56e6bec1a588d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_60e2fe4cd12230557f8f2d30b425d3db2be46f7d58806309e80896278cc4bbf4 = $this->env->getExtension("native_profiler");
-        $__internal_60e2fe4cd12230557f8f2d30b425d3db2be46f7d58806309e80896278cc4bbf4->enter($__internal_60e2fe4cd12230557f8f2d30b425d3db2be46f7d58806309e80896278cc4bbf4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "project/show.html.twig"));
+        $__internal_30b145b296361398cbb56f9c3fbd559605a4f132dc5e54b4eafad2a3d0cd767c = $this->env->getExtension("native_profiler");
+        $__internal_30b145b296361398cbb56f9c3fbd559605a4f132dc5e54b4eafad2a3d0cd767c->enter($__internal_30b145b296361398cbb56f9c3fbd559605a4f132dc5e54b4eafad2a3d0cd767c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "project/show.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_60e2fe4cd12230557f8f2d30b425d3db2be46f7d58806309e80896278cc4bbf4->leave($__internal_60e2fe4cd12230557f8f2d30b425d3db2be46f7d58806309e80896278cc4bbf4_prof);
+        $__internal_30b145b296361398cbb56f9c3fbd559605a4f132dc5e54b4eafad2a3d0cd767c->leave($__internal_30b145b296361398cbb56f9c3fbd559605a4f132dc5e54b4eafad2a3d0cd767c_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_0d1de553406971fa630ce5f3e6cd8c5e7169b4cbb4dcbe0fca07e182fa88b385 = $this->env->getExtension("native_profiler");
-        $__internal_0d1de553406971fa630ce5f3e6cd8c5e7169b4cbb4dcbe0fca07e182fa88b385->enter($__internal_0d1de553406971fa630ce5f3e6cd8c5e7169b4cbb4dcbe0fca07e182fa88b385_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_9fc266dfc39e695b5bd0dfbb212f1a3d9e2f1c3733fc52ebc84be30dace000bd = $this->env->getExtension("native_profiler");
+        $__internal_9fc266dfc39e695b5bd0dfbb212f1a3d9e2f1c3733fc52ebc84be30dace000bd->enter($__internal_9fc266dfc39e695b5bd0dfbb212f1a3d9e2f1c3733fc52ebc84be30dace000bd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <h1>Project</h1>
-
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>";
-        // line 10
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["project"]) ? $context["project"] : $this->getContext($context, "project")), "id", array()), "html", null, true);
-        echo "</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>";
-        // line 14
+        echo "    <h1>";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["project"]) ? $context["project"] : $this->getContext($context, "project")), "name", array()), "html", null, true);
-        echo "</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>";
-        // line 18
+        echo "</h1>
+
+    <h3>Descripción</h3>
+    <p>";
+        // line 7
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["project"]) ? $context["project"] : $this->getContext($context, "project")), "description", array()), "html", null, true);
-        echo "</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>";
-        // line 22
+        echo "</p>
+    <p>";
+        // line 8
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["project"]) ? $context["project"] : $this->getContext($context, "project")), "image", array()), "html", null, true);
-        echo "</td>
-            </tr>
-            <tr>
-                <th>Language</th>
-                <td>";
-        // line 26
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["project"]) ? $context["project"] : $this->getContext($context, "project")), "language", array()), "html", null, true);
-        echo "</td>
-            </tr>
-        </tbody>
-    </table>
+        echo "</p>
 
     <ul>
         <li>
             <a href=\"";
-        // line 33
+        // line 12
         echo $this->env->getExtension('routing')->getPath("projects_index");
         echo "\">Back to the list</a>
-        </li>
-        <li>
-            <a href=\"";
-        // line 36
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("projects_edit", array("id" => $this->getAttribute((isset($context["project"]) ? $context["project"] : $this->getContext($context, "project")), "id", array()))), "html", null, true);
-        echo "\">Edit</a>
-        </li>
-        <li>
-            ";
-        // line 39
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
-        echo "
-                <input type=\"submit\" value=\"Delete\">
-            ";
-        // line 41
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
-        echo "
         </li>
     </ul>
 ";
         
-        $__internal_0d1de553406971fa630ce5f3e6cd8c5e7169b4cbb4dcbe0fca07e182fa88b385->leave($__internal_0d1de553406971fa630ce5f3e6cd8c5e7169b4cbb4dcbe0fca07e182fa88b385_prof);
+        $__internal_9fc266dfc39e695b5bd0dfbb212f1a3d9e2f1c3733fc52ebc84be30dace000bd->leave($__internal_9fc266dfc39e695b5bd0dfbb212f1a3d9e2f1c3733fc52ebc84be30dace000bd_prof);
 
     }
 
@@ -122,50 +77,21 @@ class __TwigTemplate_db8024914fbfb92b316c4b8881cbd471cb87af2e43130f56e6bec1a588d
 
     public function getDebugInfo()
     {
-        return array (  103 => 41,  98 => 39,  92 => 36,  86 => 33,  76 => 26,  69 => 22,  62 => 18,  55 => 14,  48 => 10,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  58 => 12,  51 => 8,  47 => 7,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
 /* */
 /* {% block body %}*/
-/*     <h1>Project</h1>*/
+/*     <h1>{{ project.name }}</h1>*/
 /* */
-/*     <table>*/
-/*         <tbody>*/
-/*             <tr>*/
-/*                 <th>Id</th>*/
-/*                 <td>{{ project.id }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Name</th>*/
-/*                 <td>{{ project.name }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Description</th>*/
-/*                 <td>{{ project.description }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Image</th>*/
-/*                 <td>{{ project.image }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Language</th>*/
-/*                 <td>{{ project.language }}</td>*/
-/*             </tr>*/
-/*         </tbody>*/
-/*     </table>*/
+/*     <h3>Descripción</h3>*/
+/*     <p>{{ project.description }}</p>*/
+/*     <p>{{ project.image }}</p>*/
 /* */
 /*     <ul>*/
 /*         <li>*/
 /*             <a href="{{ path('projects_index') }}">Back to the list</a>*/
-/*         </li>*/
-/*         <li>*/
-/*             <a href="{{ path('projects_edit', { 'id': project.id }) }}">Edit</a>*/
-/*         </li>*/
-/*         <li>*/
-/*             {{ form_start(delete_form) }}*/
-/*                 <input type="submit" value="Delete">*/
-/*             {{ form_end(delete_form) }}*/
 /*         </li>*/
 /*     </ul>*/
 /* {% endblock %}*/

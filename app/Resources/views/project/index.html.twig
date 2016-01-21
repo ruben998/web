@@ -3,35 +3,22 @@
 {% block body %}
     <h1>Project list</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Image</th>
-                <th>Language</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for project in projects %}
-            <tr>
-                <td><a href="{{ path('projects_show', { 'id': project.id }) }}">{{ project.id }}</a></td>
-                <td>{{ project.name }}</td>
-                <td>{{ project.description }}</td>
-                <td>{{ project.image }}</td>
-                <td>{{ project.language }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('projects_show', { 'id': project.id }) }}">show</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+
+    {% for row in projects|batch(3) %}
+        <div class="row" align="center">
+            {% for project in row %}
+                <a href="{{ path('projects_show', { 'id': project.id }) }}">
+                    <div class="col-md-4 project">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h2>{{ project.name }}</h2>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    {% endfor %}
 
 {% endblock %}

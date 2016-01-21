@@ -21,26 +21,34 @@ class __TwigTemplate_95dcb6c4a0c446b24b1b0c9397f0abba014192404c4663acbffb59fa241
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_6e6234def43fb8dccb8212ca8ee8baf853ea4a42032256413894832c409a8838 = $this->env->getExtension("native_profiler");
-        $__internal_6e6234def43fb8dccb8212ca8ee8baf853ea4a42032256413894832c409a8838->enter($__internal_6e6234def43fb8dccb8212ca8ee8baf853ea4a42032256413894832c409a8838_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "auth/admin.html.twig"));
+        $__internal_28d06729e712f45d5127e93a782b148b923a1869f879e5a9e010e4e02c7418af = $this->env->getExtension("native_profiler");
+        $__internal_28d06729e712f45d5127e93a782b148b923a1869f879e5a9e010e4e02c7418af->enter($__internal_28d06729e712f45d5127e93a782b148b923a1869f879e5a9e010e4e02c7418af_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "auth/admin.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_6e6234def43fb8dccb8212ca8ee8baf853ea4a42032256413894832c409a8838->leave($__internal_6e6234def43fb8dccb8212ca8ee8baf853ea4a42032256413894832c409a8838_prof);
+        $__internal_28d06729e712f45d5127e93a782b148b923a1869f879e5a9e010e4e02c7418af->leave($__internal_28d06729e712f45d5127e93a782b148b923a1869f879e5a9e010e4e02c7418af_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_fb2474d4e6a8f8acb796dcc6dbc4b73def848c0d7c88f4a85e621cb0d7c42988 = $this->env->getExtension("native_profiler");
-        $__internal_fb2474d4e6a8f8acb796dcc6dbc4b73def848c0d7c88f4a85e621cb0d7c42988->enter($__internal_fb2474d4e6a8f8acb796dcc6dbc4b73def848c0d7c88f4a85e621cb0d7c42988_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_317d87c2308a63a07c2dfd019920a02f8b4f4367a3b85dd5467ee79c807eb125 = $this->env->getExtension("native_profiler");
+        $__internal_317d87c2308a63a07c2dfd019920a02f8b4f4367a3b85dd5467ee79c807eb125->enter($__internal_317d87c2308a63a07c2dfd019920a02f8b4f4367a3b85dd5467ee79c807eb125_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "
+        echo "    <h1>Admin Page</h1>
+    <ul>
+        <li>
+            <a href=\"";
+        // line 7
+        echo $this->env->getExtension('routing')->getPath("projects_new");
+        echo "\">Create a new project</a>
+        </li>
+    </ul>
 ";
         
-        $__internal_fb2474d4e6a8f8acb796dcc6dbc4b73def848c0d7c88f4a85e621cb0d7c42988->leave($__internal_fb2474d4e6a8f8acb796dcc6dbc4b73def848c0d7c88f4a85e621cb0d7c42988_prof);
+        $__internal_317d87c2308a63a07c2dfd019920a02f8b4f4367a3b85dd5467ee79c807eb125->leave($__internal_317d87c2308a63a07c2dfd019920a02f8b4f4367a3b85dd5467ee79c807eb125_prof);
 
     }
 
@@ -56,13 +64,18 @@ class __TwigTemplate_95dcb6c4a0c446b24b1b0c9397f0abba014192404c4663acbffb59fa241
 
     public function getDebugInfo()
     {
-        return array (  40 => 4,  34 => 3,  11 => 1,);
+        return array (  45 => 7,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
 /* */
 /* {% block body %}*/
-/* */
+/*     <h1>Admin Page</h1>*/
+/*     <ul>*/
+/*         <li>*/
+/*             <a href="{{ path('projects_new') }}">Create a new project</a>*/
+/*         </li>*/
+/*     </ul>*/
 /* {% endblock %}*/
 /* */
 /* */

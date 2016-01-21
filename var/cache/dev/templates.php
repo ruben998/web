@@ -115,10 +115,10 @@
   ':default:contact.html.twig' => '/home/ruben/web/app/Resources/views/default/contact.html.twig',
   ':default:bio.html.twig' => '/home/ruben/web/app/Resources/views/default/bio.html.twig',
   ':Exception:error404.html.twig' => '/home/ruben/web/app/Resources/views/Exception/error404.html.twig',
-  ':project:new.html.twig' => '/home/ruben/web/app/Resources/views/project/new.html.twig',
+  ':project:project_new.html.twig' => '/home/ruben/web/app/Resources/views/project/project_new.html.twig',
   ':project:index.html.twig' => '/home/ruben/web/app/Resources/views/project/index.html.twig',
   ':project:show.html.twig' => '/home/ruben/web/app/Resources/views/project/show.html.twig',
-  ':project:edit.html.twig' => '/home/ruben/web/app/Resources/views/project/edit.html.twig',
+  ':project:project_edit.html.twig' => '/home/ruben/web/app/Resources/views/project/project_edit.html.twig',
   ':auth:admin.html.twig' => '/home/ruben/web/app/Resources/views/auth/admin.html.twig',
   '::base.html.twig' => '/home/ruben/web/app/Resources/views/base.html.twig',
 );

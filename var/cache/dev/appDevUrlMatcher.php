@@ -100,6 +100,53 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/auth/projects')) {
+            // projects_auth_index
+            if ($pathinfo === '/auth/projects') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_projects_auth_index;
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\AuthController::indexAuthAction',  '_route' => 'projects_auth_index',);
+            }
+            not_projects_auth_index:
+
+            // projects_new
+            if ($pathinfo === '/auth/projects/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_projects_new;
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\AuthController::newAction',  '_route' => 'projects_new',);
+            }
+            not_projects_new:
+
+            // projects_edit
+            if (0 === strpos($pathinfo, '/auth/projects/edit') && preg_match('#^/auth/projects/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_projects_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'projects_edit')), array (  '_controller' => 'AppBundle\\Controller\\AuthController::editAction',));
+            }
+            not_projects_edit:
+
+            // projects_delete
+            if (0 === strpos($pathinfo, '/auth/projects/delete') && preg_match('#^/auth/projects/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_projects_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'projects_delete')), array (  '_controller' => 'AppBundle\\Controller\\AuthController::deleteAction',));
+            }
+            not_projects_delete:
+
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
@@ -129,61 +176,28 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'hello')), array (  '_controller' => 'AppBundle\\Controller\\ParamController::helloAction',));
         }
 
-        // projects_index
-        if ($pathinfo === '/projects') {
-            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                $allow = array_merge($allow, array('GET', 'HEAD'));
-                goto not_projects_index;
-            }
-
-            return array (  '_controller' => 'AppBundle\\Controller\\ProjectController::indexAction',  '_route' => 'projects_index',);
-        }
-        not_projects_index:
-
-        if (0 === strpos($pathinfo, '/auth/projects')) {
-            // projects_new
-            if ($pathinfo === '/auth/projects/new') {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_projects_new;
+        if (0 === strpos($pathinfo, '/projects')) {
+            // projects_index
+            if ($pathinfo === '/projects') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_projects_index;
                 }
 
-                return array (  '_controller' => 'AppBundle\\Controller\\ProjectController::newAction',  '_route' => 'projects_new',);
+                return array (  '_controller' => 'AppBundle\\Controller\\ProjectController::indexAction',  '_route' => 'projects_index',);
             }
-            not_projects_new:
+            not_projects_index:
 
             // projects_show
-            if (0 === strpos($pathinfo, '/auth/projects/show') && preg_match('#^/auth/projects/show/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/projects/show') && preg_match('#^/projects/show/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_projects_show;
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'projects_show')), array (  '_controller' => 'AppBundle\\Controller\\ProjectController::showAuthAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'projects_show')), array (  '_controller' => 'AppBundle\\Controller\\ProjectController::showAction',));
             }
             not_projects_show:
-
-            // projects_edit
-            if (0 === strpos($pathinfo, '/auth/projects/edit') && preg_match('#^/auth/projects/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_projects_edit;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'projects_edit')), array (  '_controller' => 'AppBundle\\Controller\\ProjectController::editAction',));
-            }
-            not_projects_edit:
-
-            // projects_delete
-            if (0 === strpos($pathinfo, '/auth/projects/delete') && preg_match('#^/auth/projects/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'DELETE') {
-                    $allow[] = 'DELETE';
-                    goto not_projects_delete;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'projects_delete')), array (  '_controller' => 'AppBundle\\Controller\\ProjectController::deleteAction',));
-            }
-            not_projects_delete:
 
         }
 

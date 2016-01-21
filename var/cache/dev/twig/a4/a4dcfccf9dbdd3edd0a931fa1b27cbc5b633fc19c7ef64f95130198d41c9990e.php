@@ -1,6 +1,6 @@
 <?php
 
-/* project/edit.html.twig */
+/* project/project_edit.html.twig */
 class __TwigTemplate_e72f302f36a3027292608eec77bf398da4cc6feb6830e4ee4eafb2db31ef27c8 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_e72f302f36a3027292608eec77bf398da4cc6feb6830e4ee4eafb2db31e
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "project/edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "project/project_edit.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -22,7 +22,7 @@ class __TwigTemplate_e72f302f36a3027292608eec77bf398da4cc6feb6830e4ee4eafb2db31e
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_cdca1db7eceedde49f8a7978574f95755c278b01aa87402d328e36827269f282 = $this->env->getExtension("native_profiler");
-        $__internal_cdca1db7eceedde49f8a7978574f95755c278b01aa87402d328e36827269f282->enter($__internal_cdca1db7eceedde49f8a7978574f95755c278b01aa87402d328e36827269f282_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "project/edit.html.twig"));
+        $__internal_cdca1db7eceedde49f8a7978574f95755c278b01aa87402d328e36827269f282->enter($__internal_cdca1db7eceedde49f8a7978574f95755c278b01aa87402d328e36827269f282_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "project/project_edit.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -80,7 +80,7 @@ class __TwigTemplate_e72f302f36a3027292608eec77bf398da4cc6feb6830e4ee4eafb2db31e
 
     public function getTemplateName()
     {
-        return "project/edit.html.twig";
+        return "project/project_edit.html.twig";
     }
 
     public function isTraitable()

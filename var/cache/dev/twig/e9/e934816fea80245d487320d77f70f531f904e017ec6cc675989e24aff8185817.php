@@ -1,6 +1,6 @@
 <?php
 
-/* :project:new.html.twig */
+/* :project:project_new.html.twig */
 class __TwigTemplate_4e6b8cd0e33eab0302d9cbd37987e3b587e7477f5569fd6abb4d9389c2c8177e extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_4e6b8cd0e33eab0302d9cbd37987e3b587e7477f5569fd6abb4d9389c2c
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", ":project:new.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":project:project_new.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -22,7 +22,7 @@ class __TwigTemplate_4e6b8cd0e33eab0302d9cbd37987e3b587e7477f5569fd6abb4d9389c2c
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_e2a3c7245955deabd20d90dda630d34c55c054396afa68c6b183de7c91a4cc45 = $this->env->getExtension("native_profiler");
-        $__internal_e2a3c7245955deabd20d90dda630d34c55c054396afa68c6b183de7c91a4cc45->enter($__internal_e2a3c7245955deabd20d90dda630d34c55c054396afa68c6b183de7c91a4cc45_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":project:new.html.twig"));
+        $__internal_e2a3c7245955deabd20d90dda630d34c55c054396afa68c6b183de7c91a4cc45->enter($__internal_e2a3c7245955deabd20d90dda630d34c55c054396afa68c6b183de7c91a4cc45_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":project:project_new.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
@@ -69,7 +69,7 @@ class __TwigTemplate_4e6b8cd0e33eab0302d9cbd37987e3b587e7477f5569fd6abb4d9389c2c
 
     public function getTemplateName()
     {
-        return ":project:new.html.twig";
+        return ":project:project_new.html.twig";
     }
 
     public function isTraitable()
